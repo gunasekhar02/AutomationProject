@@ -26,8 +26,8 @@ public class NaukriSteps {
 
     @When("I enter username and password")
     public void loginToNaukri() {
-        driver.findElement(By.id("usernameField")).sendKeys("gunasekharreddy1122@gmail.com");
-        driver.findElement(By.id("passwordField")).sendKeys("Guna@2002");
+        driver.findElement(By.id("usernameField")).sendKeys("xyx@gmail.com");
+        driver.findElement(By.id("passwordField")).sendKeys("kghfvskjkvh");
         driver.findElement(By.xpath("//button[text()='Login']")).click();
     }
 
@@ -92,14 +92,13 @@ public class NaukriSteps {
         // Scroll to the element using JavaScript
         ((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView({behavior: 'smooth', block: 'center'});", uploadContainer);
         
+        
+        
         WebDriverWait wait9 = new WebDriverWait(driver, Duration.ofSeconds(10));
-
         WebElement updateResumeButton = wait9.until(ExpectedConditions.elementToBeClickable(
         	    By.xpath("//input[normalize-space(@value)='Update resume']")
         	));
         
-
-
             // Make the file input element visible (if hidden)
             JavascriptExecutor executor = (JavascriptExecutor) driver;
             executor.executeScript("arguments[0].style.display = 'block';", updateResumeButton);
@@ -109,10 +108,6 @@ public class NaukriSteps {
 
             // Use sendKeys() to upload the file
             updateResumeButton.sendKeys(filePath);
-
-//        	// Using JavaScript to force-click
-//        	JavascriptExecutor executor = (JavascriptExecutor) driver;
-//        	executor.executeScript("arguments[0].click();", updateResumeButton);
         
         	        
     }
